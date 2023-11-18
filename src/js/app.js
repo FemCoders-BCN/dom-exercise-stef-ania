@@ -4,6 +4,7 @@ const redColor = document.querySelector(".red");
 const grayColor = document.querySelector(".gray");
 const blackColor = document.querySelector(".black");
 const btnCart = document.getElementById("button");
+const feedbackBtn = document.querySelector(".feedback");
 
 function changeToRed() {
   imgCard.style.backgroundImage = "url('./public/img/redcar.jpg')";
@@ -26,10 +27,16 @@ function changeToBlack() {
   imgCard.alt = "Black car";
 }
 
+function buttonClicked() {
+  feedbackBtn.classList.add("visible");
+  btnCart.classList.add("hidden");
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
   redColor.addEventListener("click", changeToRed);
   grayColor.addEventListener("click", changeToGray);
   blackColor.addEventListener("click", changeToBlack);
+  feedbackBtn.addEventListener("click", buttonClicked);
 });
 
-export { changeToRed, changeToGray, changeToBlack };
+export { changeToRed, changeToGray, changeToBlack, buttonClicked };

@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeAll } from "vitest";
 import { JSDOM } from "jsdom";
-import { changeToRed, changeToGray, changeToBlack } from "../src/js/app";
+import { changeToRed, changeToGray, changeToBlack, buttonClicked } from "../src/js/app";
 
 describe("APP", () => {
   let dom;
@@ -37,6 +37,11 @@ describe("APP", () => {
     expect(typeof changeToBlack).toBe("function");
   });
 
+  it("should exist the function buttonClicked", async () => {
+    expect(buttonClicked).toBeDefined();
+    expect(typeof buttonClicked).toBe("function");
+  });
+
   // Change colors
   it("changeToRed should set styles the cart button, the tag and the car img to red", () => {
     changeToRed();
@@ -65,7 +70,7 @@ describe("APP", () => {
   /*
   //Simulate click on button
   it("clicking the button with red class should trigger changeToRed", () => {
-    btn.click();
+    buttonClicked();
     expect(imgCard.style.backgroundImage).toBe("url('./public/img/redcar.jpg')");
     expect(btnCart.style.backgroundColor).toBe("red");
     expect(tag.style.backgroundColor).toBe("red");

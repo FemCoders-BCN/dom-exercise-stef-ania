@@ -20,11 +20,15 @@ El proyecto ya esta realizado con la arquitectura adecuada para su funcionamient
 - DEBERÁ llevar las tecnologías empleadas
 - DEBERÁ llevar como se debe hacer el proceso para instalar todo lo necesario para que se corran los test (instalar nodejs, hacer npm install o npm i)
 
+---
+
 # Product card project :muscle:
 
 ![Product card project](public/img/img_readme.png)
 
 Este proyecto es un ejercicio diseñado para aprender y practicar la manipulación del DOM (Document Object Model) utilizando tecnologías web estándar como HTML, CSS y JavaScript. El objetivo principal es crear una experiencia interactiva donde al hacer clic en un botón de color, se cambia la imagen del producto y los colores asociados a dicho producto.
+
+---
 
 ## Características Principales
 
@@ -32,12 +36,13 @@ Este proyecto es un ejercicio diseñado para aprender y practicar la manipulaci�
 
 **Uso de testing unitario:** Uso del testing para asegurar la funcionalidad y estabilidad del código.
 
+---
+
 ## Tecnologías Utilizadas
 
-**HTML**
-**CSS**
-**JavaScript**
-**Vitest**
+HTML, CSS, JavaScript, Vitest
+
+---
 
 ## Instalación de la parte testing
 

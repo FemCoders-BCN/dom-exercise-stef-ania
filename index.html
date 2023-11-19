@@ -17,24 +17,24 @@
     <title>Práctica del DOM</title>
   </head>
   <body>
-    <div class="product-card">
-      <div class="product-image">
+    <main class="product-card">
+      <figure class="product-image">
         <!-- <img src="./public/img/graycar.jpg" alt="cars" /> -->
-      </div>
-      <div class="product-description">
+      </figure>
+      <section class="product-description">
         <h3 class="tag">CARRO</h3>
         <h1 class="product-title">Mercedez Benz c300 2022</h1>
         <p class="product-details">
           <span class="mileage">
-            <span style="font-size: 1em; color: black"><i class="fa-solid fa-car"></i></span>
+            <span class="icon-style"><i class="fa-solid fa-car"></i></span>
             Kilometraje: 4,000 millas
           </span>
           <span class="fuel">
-            <span style="font-size: 1em; color: black"><i class="fa-solid fa-gas-pump"></i></span>
+            <span class="icon-style"><i class="fa-solid fa-gas-pump"></i></span>
             Combustible: 25mpg
           </span>
           <span class="safety">
-            <span style="font-size: 1em; color: black"><i class="fa-solid fa-shield"></i></span>Seguridad:
+            <span class="icon-style"><i class="fa-solid fa-shield"></i></span>Seguridad:
             <span class="stars">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -47,9 +47,9 @@
         <p>Escoge un color:</p>
         <div class="colors-price">
           <div class="colors">
-            <span class="red"></span>
-            <span class="gray"></span>
-            <span class="black"></span>
+            <button class="red"></button>
+            <button class="gray"></button>
+            <button class="black"></button>
           </div>
           <div class="pricing">
             <h2 class="new-price">$134,450</h2>
@@ -65,8 +65,8 @@
         <button class="feedback">
           <span id="white-button">? Guao, vas a ser el dueño de un Benz ?</span>
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
     <script src="./src/js/app.js" type="module"></script>
   </body>
 </html>

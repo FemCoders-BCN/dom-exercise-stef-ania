@@ -1,3 +1,5 @@
+@import "reset.css";
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -31,11 +33,13 @@ body {
 .product-card {
   background: #fff;
   box-shadow: 10px 10px 25px 0px #3c3c3c;
-  display: grid;
-  /* align-items: center; */
-  grid-template-rows: 55% 45%;
+  display: flex;
+  flex-direction: column;
+  /*display: grid;
+   align-items: center; 
+  grid-template-rows: 55% 45%;*/
   height: 80%;
-  width: 28%;
+  max-width: 28rem;
 }
 
 .product-image {
@@ -45,15 +49,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 66%;
-  padding: 40px 10px;
-  width: 28rem;
+  /*padding: 40px 10px;*/
 }
 
 .product-description {
   background-color: #62c256;
   color: #fff;
-  margin-top: -67px;
-  padding-left: 20px;
+  padding: 24px;
 }
 
 .product-details {
@@ -69,6 +71,16 @@ body {
 .stars {
   color: yellow;
   font-size: 1em;
+}
+
+/* Estilo iconos y botones colores*/
+.icon-style {
+  color: black;
+  font-size: 1em;
+}
+
+.colors button {
+  border: 0;
 }
 
 /* colores */
@@ -145,12 +157,4 @@ button white-button {
   border-radius: 5px;
   display: none;
   padding: 10px 25px;
-}
-
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
 }

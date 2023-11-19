@@ -28,8 +28,8 @@ function changeToBlack() {
 }
 
 function buttonClicked() {
-  feedbackBtn.classList.add("visible");
-  btnCart.classList.add("hidden");
+  feedbackBtn.style.display = "block";
+  btnCart.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {

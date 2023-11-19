@@ -4,11 +4,34 @@ import { changeToRed, changeToGray, changeToBlack, buttonClicked } from "../src/
 
 describe("APP", () => {
   let dom;
+  let imgMock;
+  let tag;
+  let backgroundMock;
+  let feedbackBtn;
+
   beforeAll(async () => {
     dom = await JSDOM.fromFile("index.html", {
       resources: "usable",
       runScripts: "dangerously",
     });
+    const article = document.createElement("article");
+    article.classList.add("product-card");
+
+    imgMock = document.createElement("figure");
+    imgMock.classList.add("product-image");
+    article.appendChild(imgMock);
+
+    tag = document.createElement("p");
+    tag.classList.add("tag");
+    article.appendChild(tag);
+
+    backgroundMock = document.createElement("button");
+    backgroundMock.id = "button";
+    article.appendChild(backgroundMock);
+
+    feedbackBtn = document.createElement("output");
+    feedbackBtn.classList.add("feedback");
+    article.appendChild(feedbackBtn);
   });
   it("should render css", async () => {
     let document = dom.window.document;
@@ -45,24 +68,24 @@ describe("APP", () => {
   // Change colors
   it("changeToRed should set styles the cart button, the tag and the car img to red", () => {
     changeToRed();
-    expect(imgCard.style.backgroundImage).toBe("url('./public/img/redcar.jpg')");
-    expect(btnCart.style.backgroundColor).toBe("red");
+    expect(imgMock.style.backgroundImage).toBe("url('./public/img/redcar.jpg')");
+    expect(backgroundMock.style.backgroundColor).toBe("red");
     expect(tag.style.backgroundColor).toBe("red");
     expect(imgCard.alt).toBe("Red car");
   });
 
   it("changeToGray should set styles the cart button, the tag and the car img to gray", () => {
     changeToGray();
-    expect(imgCard.style.backgroundImage).toBe("url('./public/img/graycar.jpg')");
-    expect(btnCart.style.backgroundColor).toBe("gray");
+    expect(imgMock.style.backgroundImage).toBe("url('./public/img/graycar.jpg')");
+    expect(backgroundMock.style.backgroundColor).toBe("gray");
     expect(tag.style.backgroundColor).toBe("gray");
     expect(imgCard.alt).toBe("Gray car");
   });
 
   it("changeToBlack should set styles the cart button, the tag and the car img to black", () => {
     changeToBlack();
-    expect(imgCard.style.backgroundImage).toBe("url('./public/img/blackcar.jpg')");
-    expect(btnCart.style.backgroundColor).toBe("black");
+    expect(imgMock.style.backgroundImage).toBe("url('./public/img/blackcar.jpg')");
+    expect(backgroundMock.style.backgroundColor).toBe("black");
     expect(tag.style.backgroundColor).toBe("black");
     expect(imgCard.alt).toBe("Black carq");
   });

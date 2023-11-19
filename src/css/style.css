@@ -174,8 +174,10 @@ button white-button {
 }
 
 .feedback {
+  background-color: #fff;
   border: none;
   border-radius: 5px;
+  color: #333;
   display: none;
   padding: 10px 25px;
 }

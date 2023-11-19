@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   redColor.addEventListener("click", changeToRed);
   grayColor.addEventListener("click", changeToGray);
   blackColor.addEventListener("click", changeToBlack);
-  feedbackBtn.addEventListener("click", buttonClicked);
+  btnCart.addEventListener("click", buttonClicked);
 });
 
 export { changeToRed, changeToGray, changeToBlack, buttonClicked };

@@ -17,55 +17,57 @@
     <title>Práctica del DOM</title>
   </head>
   <body>
-    <main class="product-card">
-      <figure class="product-image">
-        <!-- <img src="./public/img/graycar.jpg" alt="cars" /> -->
-      </figure>
-      <section class="product-description">
-        <h3 class="tag">CARRO</h3>
-        <h1 class="product-title">Mercedez Benz c300 2022</h1>
-        <p class="product-details">
-          <span class="mileage">
-            <span class="icon-style"><i class="fa-solid fa-car"></i></span>
-            Kilometraje: 4,000 millas
-          </span>
-          <span class="fuel">
-            <span class="icon-style"><i class="fa-solid fa-gas-pump"></i></span>
-            Combustible: 25mpg
-          </span>
-          <span class="safety">
-            <span class="icon-style"><i class="fa-solid fa-shield"></i></span>Seguridad:
-            <span class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+    <main>
+      <article class="product-card">
+        <figure class="product-image">
+          <!-- <img src="./public/img/graycar.jpg" alt="cars" /> -->
+        </figure>
+        <section class="product-description">
+          <p class="tag">CARRO</p>
+          <h1 class="product-title">Mercedez Benz c300 2022</h1>
+          <ul class="product-details">
+            <li class="mileage">
+              <span class="icon-style dark"><i class="fa-solid fa-car"></i></span>
+              Kilometraje: 4,000 millas
+            </li>
+            <li class="fuel">
+              <span class="icon-style dark"><i class="fa-solid fa-gas-pump"></i></span>
+              Combustible: 25mpg
+            </li>
+            <li class="safety">
+              <span class="icon-style dark"><i class="fa-solid fa-shield"></i></span>Seguridad:
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+            </li>
+          </ul>
+          <p>Escoge un color:</p>
+          <div class="colors-price">
+            <div class="colors">
+              <button class="red"></button>
+              <button class="gray"></button>
+              <button class="black"></button>
+            </div>
+            <div class="pricing">
+              <strong class="new-price">$134,450</strong>
+              <del class="old-price"><s>$140,500</s></del>
+            </div>
+          </div>
+          <button id="button">
+            <span class="icon-style light">
+              <i class="fa-solid fa-cart-shopping"></i>
             </span>
-          </span>
-        </p>
-        <p>Escoge un color:</p>
-        <div class="colors-price">
-          <div class="colors">
-            <button class="red"></button>
-            <button class="gray"></button>
-            <button class="black"></button>
-          </div>
-          <div class="pricing">
-            <h2 class="new-price">$134,450</h2>
-            <h4 class="old-price"><s>$140,500</s></h4>
-          </div>
-        </div>
-        <button id="button">
-          <span style="font-size: 1em; color: white">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </span>
-          <span class="button-text">Agregar al carrito</span>
-        </button>
-        <button class="feedback">
-          <span id="white-button">? Guao, vas a ser el dueño de un Benz ?</span>
-        </button>
-      </section>
+            <span class="button-text">Agregar al carrito</span>
+          </button>
+          <button class="feedback">
+            <span id="white-button">? Guao, vas a ser el dueño de un Benz ?</span>
+          </button>
+        </section>
+      </article>
     </main>
     <script src="./src/js/app.js" type="module"></script>
   </body>

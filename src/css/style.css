@@ -7,10 +7,6 @@
 body {
   align-items: center;
   background-color: antiquewhite;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  overflow-y: hidden;
 }
 
 /* etiqueta de producto */
@@ -28,17 +24,15 @@ body {
 .product-title {
   font-size: 2rem;
   font-weight: 700;
+  margin: 1rem 0;
 }
 
 .product-card {
-  background: #fff;
+  border-radius: 16px;
   box-shadow: 10px 10px 25px 0px #3c3c3c;
   display: flex;
   flex-direction: column;
-  /*display: grid;
-   align-items: center; 
-  grid-template-rows: 55% 45%;*/
-  height: 80%;
+  margin: 2rem auto;
   max-width: 28rem;
 }
 
@@ -48,20 +42,25 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 66%;
-  /*padding: 40px 10px;*/
+  border-radius: 16px 16px 0 0;
+  min-height: 266px;
 }
 
 .product-description {
   background-color: #62c256;
+  border-radius: 0 0 16px 16px;
   color: #fff;
   padding: 24px;
+}
+
+.product-description p {
+  margin-bottom: 1rem;
 }
 
 .product-details {
   display: flex;
   flex-direction: column;
-  margin-top: -20px;
+  margin-bottom: 1rem;
 }
 
 .product-image img {
@@ -74,9 +73,18 @@ body {
 }
 
 /* Estilo iconos y botones colores*/
+
 .icon-style {
-  color: black;
   font-size: 1em;
+  margin-right: 0.5rem;
+}
+
+.dark {
+  color: black;
+}
+
+.light {
+  color: white;
 }
 
 .colors button {
@@ -88,15 +96,15 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-top: -15px;
+  margin: 0 0 1rem;
   width: 70%;
 }
 
 .colors {
   cursor: pointer;
   display: flex;
+  gap: 0.5rem;
   justify-content: space-between;
-  width: 6rem;
 }
 
 .red {
@@ -124,16 +132,29 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 12rem;
+  margin-left: 1rem;
+}
+
+.new-price {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .old-price {
   font-weight: 100;
+  margin-left: 1rem;
 }
 
 /* botones */
 button {
   cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+
+button:hover {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  opacity: 0.7;
+  transition: all 1s ease-in-out;
 }
 
 #button {
@@ -157,4 +178,10 @@ button white-button {
   border-radius: 5px;
   display: none;
   padding: 10px 25px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
 }

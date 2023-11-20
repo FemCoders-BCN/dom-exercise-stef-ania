@@ -14,6 +14,7 @@ describe("APP", () => {
       resources: "usable",
       runScripts: "dangerously",
     });
+    /*
     const article = document.createElement("article");
     article.classList.add("product-card");
 
@@ -32,6 +33,7 @@ describe("APP", () => {
     feedbackBtn = document.createElement("output");
     feedbackBtn.classList.add("feedback");
     article.appendChild(feedbackBtn);
+    */
   });
   it("should render css", async () => {
     let document = dom.window.document;
@@ -65,29 +67,71 @@ describe("APP", () => {
     expect(typeof buttonClicked).toBe("function");
   });
 
-  // Change colors
-  it("changeToRed should set styles the cart button, the tag and the car img to red", () => {
+  // RED COLOR:
+  // Change image and colors clicking on red button
+  it("changeToRed should change the image to an image of a red car", () => {
     changeToRed();
     expect(imgMock.style.backgroundImage).toBe("url('./public/img/redcar.jpg')");
-    expect(backgroundMock.style.backgroundColor).toBe("red");
-    expect(tag.style.backgroundColor).toBe("red");
+  });
+
+  it("changeToRed should change alt of the image", () => {
+    changeToRed();
     expect(imgCard.alt).toBe("Red car");
   });
 
-  it("changeToGray should set styles the cart button, the tag and the car img to gray", () => {
+  it("changeToRed should change the tag's color to red", () => {
+    changeToRed();
+    expect(tag.style.backgroundColor).toBe("red");
+  });
+
+  it("changeToRed should change the color of the cart button to red", () => {
+    changeToRed();
+    expect(backgroundMock.style.backgroundColor).toBe("red");
+  });
+
+  // GRAY COLOR:
+  // Change image and colors clicking on grey button
+  it("changeToGray should change the image to an image of a gray car", () => {
     changeToGray();
     expect(imgMock.style.backgroundImage).toBe("url('./public/img/graycar.jpg')");
-    expect(backgroundMock.style.backgroundColor).toBe("gray");
-    expect(tag.style.backgroundColor).toBe("gray");
+  });
+
+  it("changeToGray should change alt of the image", () => {
+    changeToGray();
     expect(imgCard.alt).toBe("Gray car");
   });
 
-  it("changeToBlack should set styles the cart button, the tag and the car img to black", () => {
+  it("changeToGray should change the tag's color to gray", () => {
+    changeToGray();
+    expect(tag.style.backgroundColor).toBe("gray");
+  });
+
+  it("changeToGray should change the color of the cart button to gray", () => {
+    changeToGray();
+    expect(backgroundMock.style.backgroundColor).toBe("gray");
+  });
+
+  // BLACK COLOR:
+  // Change image and colors clicking on black button
+
+  it("changeToBlack should change the image to an image of a black car", () => {
     changeToBlack();
     expect(imgMock.style.backgroundImage).toBe("url('./public/img/blackcar.jpg')");
-    expect(backgroundMock.style.backgroundColor).toBe("black");
+  });
+
+  it("changeToBlack should change alt of the image", () => {
+    changeToBlack();
+    expect(imgCard.alt).toBe("Black car");
+  });
+
+  it("changeToBlack should change the tag's color to black", () => {
+    changeToBlack();
     expect(tag.style.backgroundColor).toBe("black");
-    expect(imgCard.alt).toBe("Black carq");
+  });
+
+  it("changeToBlack should change the color of the cart button to black", () => {
+    changeToBlack();
+    expect(backgroundMock.style.backgroundColor).toBe("black");
   });
 
   /*

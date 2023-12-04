@@ -4,42 +4,30 @@ import { changeToRed, changeToGray, changeToBlack, buttonClicked } from "../src/
 
 describe("APP", () => {
   let dom;
-  let imgMock;
+  let window;
+  let imgCard;
   let tag;
-  let backgroundMock;
-  let feedbackBtn;
+  let btnCart;
 
   beforeAll(async () => {
     dom = await JSDOM.fromFile("index.html", {
       resources: "usable",
       runScripts: "dangerously",
     });
-    /*
-    const article = document.createElement("article");
-    article.classList.add("product-card");
-
-    imgMock = document.createElement("figure");
-    imgMock.classList.add("product-image");
-    article.appendChild(imgMock);
-
-    tag = document.createElement("p");
-    tag.classList.add("tag");
-    article.appendChild(tag);
-
-    backgroundMock = document.createElement("button");
-    backgroundMock.id = "button";
-    article.appendChild(backgroundMock);
-
-    feedbackBtn = document.createElement("output");
-    feedbackBtn.classList.add("feedback");
-    article.appendChild(feedbackBtn);
-    */
+    /* Inicializamos las variables declaradas previamente: */
+    window = dom.window;
+    document = dom.window.document;
+    imgCard = document.querySelector(".product-image");
+    tag = document.querySelector(".tag");
+    btnCart = document.getElementById("button");
   });
+
   it("should render css", async () => {
     let document = dom.window.document;
     let link = document.querySelector("link");
-    expect(link.href).toMatch(/\.\/src\/css\/style\.css$/);
+    expect(link.href).toMatch(/style.css$/);
   });
+
   it("should render the script in html", () => {
     const document = dom.window.document;
     const script = document.querySelector("script");
@@ -71,7 +59,7 @@ describe("APP", () => {
   // Change image and colors clicking on red button
   it("changeToRed should change the image to an image of a red car", () => {
     changeToRed();
-    expect(imgMock.style.backgroundImage).toBe("url('./public/img/redcar.jpg')");
+    expect(imgCard.style.backgroundImage).toBe("url('./public/img/redcar.jpg')");
   });
 
   it("changeToRed should change alt of the image", () => {
@@ -86,14 +74,14 @@ describe("APP", () => {
 
   it("changeToRed should change the color of the cart button to red", () => {
     changeToRed();
-    expect(backgroundMock.style.backgroundColor).toBe("red");
+    expect(btnCart.style.backgroundColor).toBe("red");
   });
 
   // GRAY COLOR:
   // Change image and colors clicking on grey button
   it("changeToGray should change the image to an image of a gray car", () => {
     changeToGray();
-    expect(imgMock.style.backgroundImage).toBe("url('./public/img/graycar.jpg')");
+    expect(imgCard.style.backgroundImage).toBe("url('./public/img/graycar.jpg')");
   });
 
   it("changeToGray should change alt of the image", () => {
@@ -108,7 +96,7 @@ describe("APP", () => {
 
   it("changeToGray should change the color of the cart button to gray", () => {
     changeToGray();
-    expect(backgroundMock.style.backgroundColor).toBe("gray");
+    expect(btnCart.style.backgroundColor).toBe("gray");
   });
 
   // BLACK COLOR:
@@ -116,7 +104,7 @@ describe("APP", () => {
 
   it("changeToBlack should change the image to an image of a black car", () => {
     changeToBlack();
-    expect(imgMock.style.backgroundImage).toBe("url('./public/img/blackcar.jpg')");
+    expect(imgCard.style.backgroundImage).toBe("url('./public/img/blackcar.jpg')");
   });
 
   it("changeToBlack should change alt of the image", () => {
@@ -131,10 +119,10 @@ describe("APP", () => {
 
   it("changeToBlack should change the color of the cart button to black", () => {
     changeToBlack();
-    expect(backgroundMock.style.backgroundColor).toBe("black");
+    expect(btnCart.style.backgroundColor).toBe("black");
   });
 
-  /*
+  /* Por volver a chequear:
   //Simulate click on button
   it("clicking the button with red class should trigger changeToRed", () => {
     buttonClicked();
